@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html'%}
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    {% block b1 %}
+    <h1>feedback form</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                <label for="">Enter the name</label><br>
+                <input type="text" name="name"><br>
+                <label for="">Enter the ratings</label><br>
+                <input type="number" name="rating">
+                <label for="">Enter the feedback</label>
+                <input type="textarea" name="feedback"><br>
+                <input type="submit" value="submit">
+                <input type="reset" value="cancel">
+
+
+
+            </div>
+        </div>
+    </form>
+    {% for f in form %}
+     {{f.name}}<br>
+    {{f.rating}}<br>
+    {{f.feedback}} <br>
+    {{f.create_at}}<br>
+    {{'-------------'}}<br>
+    {% endfor %}
+    {% endblock %}
+    
+</body>
+</html>

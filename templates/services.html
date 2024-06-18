@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html'%}
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    {% block b1 %}
+    <table class="table">
+        <thead class="thead-dark">
+            <th>courseno</th>
+            <th>course name</th>
+            <th>timings</th>
+            <th>startdate</th>
+            <th>duration</th>
+            <th>coursefee</th>
+            <th>trainername</th>
+        </thead>
+        <tbody>
+            {% for c in cd %}
+            <tr>
+                <td>{{c.courseno}}</td>
+                <td>{{c.coursename}}</td>
+                <td>{{c.timings}}</td>
+                <td>>{{c.startdate}}</td>
+                <td>{{c.duration}}</td>
+                <td>{{c.coursefee}}</td>
+                <td>{{c.trainername}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+    </table>
+
+    {% endblock %}
+    
+</body>
+</html>
